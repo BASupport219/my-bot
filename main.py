@@ -216,7 +216,7 @@ def main():
                         # Step 11: Check Executor and click Username
                         processed_rows = []
                         row = 1
-                        max_rows = 3  # Maximum rows to check
+                        max_rows = 5  # Maximum rows to check
 
                         # Get the number of rows in the table
                         rows = driver.find_elements(By.XPATH, f"{table_xpath}/tr")
@@ -235,9 +235,9 @@ def main():
                             username_xpath = f"/html/body/div[5]/div[2]/div/div[12]/div/div/div[2]/div/table/tbody/tr[{row}]/td[3]/a"
 
                             try:
-                                # Check if row is a multiple of 20 (e.g., 20, 40, 60, etc.)
-                                if row % 20 == 0:
-                                    logger.info(f"Row {row} is a multiple of 20, clicking Search button")
+                                # Check if row is a multiple of 8 (e.g., 8, 16, 24, etc.)
+                                if row % 8 == 0:
+                                    logger.info(f"Row {row} is a multiple of 8, clicking Search button")
                                     try:
                                         search_button = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[5]/div[2]/div/div[11]/div/div/input")))
                                         driver.execute_script("arguments[0].click();", search_button)
@@ -1048,6 +1048,4 @@ if __name__ == "__main__":
         logger.error(f"Unexpected error in main: {str(e)}")
         cleanup_browser(None)
     finally:
-
         cleanup_browser(None)
-
