@@ -106,8 +106,8 @@ def main():
                 logger.info("Entering username")
                 username_field = wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div/form/div[2]/div/input")))
                 username_field.clear()
-                username_field.send_keys("superbabot2")
-                wait.until(EC.text_to_be_present_in_element_value((By.XPATH, "/html/body/div[2]/div/form/div[2]/div/input"), "superbabot2"))
+                username_field.send_keys("superbabot7")
+                wait.until(EC.text_to_be_present_in_element_value((By.XPATH, "/html/body/div[2]/div/form/div[2]/div/input"), "superbabot7"))
                 logger.info("Username entered")
                 time.sleep(1)
 
@@ -1048,4 +1048,5 @@ if __name__ == "__main__":
         logger.error(f"Unexpected error in main: {str(e)}")
         cleanup_browser(None)
     finally:
+
         cleanup_browser(None)
