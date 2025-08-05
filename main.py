@@ -216,7 +216,7 @@ def main():
                         # Step 11: Check Executor and click Username
                         processed_rows = []
                         row = 1
-                        max_rows = 100  # Maximum rows to check
+                        max_rows = 3  # Maximum rows to check
 
                         # Get the number of rows in the table
                         rows = driver.find_elements(By.XPATH, f"{table_xpath}/tr")
@@ -1050,3 +1050,4 @@ if __name__ == "__main__":
     finally:
 
         cleanup_browser(None)
+
